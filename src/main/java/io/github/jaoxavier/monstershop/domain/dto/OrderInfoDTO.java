@@ -7,7 +7,7 @@ import java.util.List;
 
 @Data
 public class OrderInfoDTO {
-    private Integer idProject;
+    private Integer idOrder;
     private Integer idClient;
     private List<Items> items;
     private Double total;

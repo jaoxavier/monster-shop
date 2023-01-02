@@ -1,24 +1,18 @@
 package io.github.jaoxavier.monstershop.rest.controller;
 
-import io.github.jaoxavier.monstershop.domain.dto.ItemsInfoDTO;
 import io.github.jaoxavier.monstershop.domain.dto.OrderDTO;
 import io.github.jaoxavier.monstershop.domain.dto.OrderInfoDTO;
-import io.github.jaoxavier.monstershop.domain.entity.Client;
-import io.github.jaoxavier.monstershop.domain.entity.Items;
-import io.github.jaoxavier.monstershop.domain.entity.Monster;
 import io.github.jaoxavier.monstershop.domain.entity.Order;
 import io.github.jaoxavier.monstershop.domain.repository.ClientRepository;
 import io.github.jaoxavier.monstershop.domain.repository.ItemsRepository;
 import io.github.jaoxavier.monstershop.domain.repository.MonsterRepository;
 import io.github.jaoxavier.monstershop.domain.repository.OrderRepository;
-import io.github.jaoxavier.monstershop.service.OrderService;
+import io.github.jaoxavier.monstershop.service.application.OrderService;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.cache.spi.support.AbstractReadWriteAccess;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/orders")
@@ -48,7 +42,7 @@ public class OrderController {
                 () -> new RuntimeException("Order not found")
         );
         OrderInfoDTO orderInfoDTO = new OrderInfoDTO();
-        orderInfoDTO.setIdProject(order.getId());
+        orderInfoDTO.setIdOrder(order.getId());
         orderInfoDTO.setIdClient(order.getClient().getId());
         orderInfoDTO.setItems(order.getItens());
         orderInfoDTO.setTotal(order.getTotalPrice());

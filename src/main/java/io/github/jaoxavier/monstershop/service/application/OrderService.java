@@ -1,4 +1,4 @@
-package io.github.jaoxavier.monstershop.service;
+package io.github.jaoxavier.monstershop.service.application;
 
 import io.github.jaoxavier.monstershop.domain.dto.ItemsInfoDTO;
 import io.github.jaoxavier.monstershop.domain.dto.OrderDTO;
@@ -64,7 +64,7 @@ public class OrderService {
 
                     _item.setQuantity(dto.getQuantity());
                     _item.setTotal(dto.getQuantity() * monster.getPrice());
-                    _item.setMonster(monster);
+                    _item.setMonster(monster.getId());
                     _item.setOrder(order);
                     return _item;
                 }).collect(Collectors.toList());

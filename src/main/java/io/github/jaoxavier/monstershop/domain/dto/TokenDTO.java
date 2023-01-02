@@ -2,11 +2,11 @@ package io.github.jaoxavier.monstershop.domain.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-public class ItemsInfoDTO {
+@AllArgsConstructor
+public class TokenDTO {
     private Integer id;
-    private Integer monster;
-    private Integer quantity;
+    private String username;
+    private String token;
 }
