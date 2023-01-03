@@ -1,0 +1,17 @@
+<div class="main-login-container">    
+    <form class="login" (ngSubmit)="onSubmit()" #form="ngForm">
+
+        <div class="login-username">
+            <input type="text" name="username" placeholder="Username" id="username" [(ngModel)]="login.username" required>
+        </div>
+
+        <div class="login-password">
+            <input type="password" name="password" placeholder="Password" id="password" [(ngModel)]="login.password" required>
+        </div>
+
+        <div class="buttons">
+            <button type="submit" [disabled]="form.form.invalid">Join</button>
+            <button type="button" [routerLink]="['/create-account']">Create account</button>
+        </div>
+    </form>
+</div>

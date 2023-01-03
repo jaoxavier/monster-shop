@@ -1,0 +1,13 @@
+<div class="main-create-account-container">
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+        <div class="create-account-username">
+            <input type="text" name="username" id="username" placeholder="Username" [(ngModel)]="login.username" required>
+        </div>
+        <div class="create-account-password">
+            <input type="password" name="password" id="password" placeholder="Password" [(ngModel)]="login.password" required>
+        </div>
+        <div class="buttons">
+            <button type="submit" [disabled]="form.form.invalid">Create</button>
+        </div>
+    </form>
+</div>
