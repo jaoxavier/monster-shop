@@ -1,0 +1,13 @@
+<div class="monster-container" *ngIf="monsters">
+    <mat-card class="monster-card" *ngFor="let monster of monsters">
+        <mat-card-header>
+            {{monster.name}}
+        </mat-card-header>
+        <mat-card-content>
+            <img mat-card-image src="{{monster.urlImage}}">
+        </mat-card-content>
+        <mat-card-actions>
+            {{monster.category}}
+        </mat-card-actions>
+    </mat-card>
+</div>
