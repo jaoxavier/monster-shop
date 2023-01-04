@@ -1,0 +1,20 @@
+<div class="header">
+    <a class="header-title">Monster Shop</a>
+    
+    <div class="header-right">
+        
+        <a mat-button [matMenuTriggerFor]="products">Products</a>
+        
+        <mat-menu #products="matMenu" class="menu-trigger mat-menu-trigger">
+            <button mat-menu-item>MONSTER ENERGY</button>
+            <button mat-menu-item>MONSTER ULTRA</button>
+            <button mat-menu-item>JUICE MONSTER</button>
+            <button mat-menu-item>DRAGON TEA</button>
+            <button mat-menu-item>ALL PRODUCTS</button>
+        </mat-menu>
+
+        <a class="button">
+            <mat-icon>shopping_cart</mat-icon>
+        </a>
+    </div>
+</div>

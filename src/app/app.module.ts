@@ -3,6 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +19,7 @@ import { AuthenticationComponent } from './account/authentication/authentication
 import { HomeComponent } from './main/home/home.component';
 import { LayoutComponent } from './main/layout/layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './main/layout/header/header.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CreateAccountComponent,
     AuthenticationComponent,
     HomeComponent,
-    LayoutComponent
+    LayoutComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +37,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
