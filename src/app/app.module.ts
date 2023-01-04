@@ -8,7 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
-
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +20,8 @@ import { HomeComponent } from './main/home/home.component';
 import { LayoutComponent } from './main/layout/layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './main/layout/header/header.component';
+import { MonsterByCategoryComponent } from './main/monster-by-category/monster-by-category.component';
+import { MonstersAllComponent } from './monsters-all/monsters-all.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { HeaderComponent } from './main/layout/header/header.component';
     AuthenticationComponent,
     HomeComponent,
     LayoutComponent,
-    HeaderComponent
+    HeaderComponent,
+    MonsterByCategoryComponent,
+    MonstersAllComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,8 @@ import { HeaderComponent } from './main/layout/header/header.component';
     MatIconModule,
     MatMenuModule,
     MatButtonModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

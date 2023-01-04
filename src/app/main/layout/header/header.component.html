@@ -1,15 +1,15 @@
 <div class="header">
-    <a class="header-title">Monster Shop</a>
+    <a class="header-title" routerLink="/home">Monster Shop</a>
     
     <div class="header-right">
-        
+
         <a mat-button [matMenuTriggerFor]="products">Products</a>
         
         <mat-menu #products="matMenu" class="menu-trigger mat-menu-trigger">
-            <button mat-menu-item>MONSTER ENERGY</button>
-            <button mat-menu-item>MONSTER ULTRA</button>
-            <button mat-menu-item>JUICE MONSTER</button>
-            <button mat-menu-item>DRAGON TEA</button>
+            <button mat-menu-item [routerLink]="['monster', 'MONSTER_ENERGY']">MONSTER ENERGY</button>
+            <button mat-menu-item [routerLink]="['monster', 'MONSTER_ULTRA']">MONSTER ULTRA</button>
+            <button mat-menu-item [routerLink]="['monster', 'JUICE_MONSTER']">JUICE MONSTER</button>
+            <button mat-menu-item [routerLink]="['monster', 'DRAGON_TEA']">DRAGON TEA</button>
             <button mat-menu-item>ALL PRODUCTS</button>
         </mat-menu>
 

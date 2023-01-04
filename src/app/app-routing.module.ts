@@ -6,12 +6,14 @@ import { AuthGuard } from './account/guard/auth.guard';
 import { LoginComponent } from './account/login/login.component';
 import { HomeComponent } from './main/home/home.component';
 import { LayoutComponent } from './main/layout/layout.component';
+import { MonsterByCategoryComponent } from './main/monster-by-category/monster-by-category.component';
 
 const routes: Routes = [
   {
   path: '', component: LayoutComponent, children: [
     {path: '', redirectTo: 'home', pathMatch:'full'},
-    {path: 'home', component: HomeComponent}
+    {path: 'home', component: HomeComponent},
+    {path: 'monster/:category', component: MonsterByCategoryComponent}
   ], 
   canActivate: [AuthGuard]
   },
@@ -25,7 +27,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    onSameUrlNavigation: "reload"
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
