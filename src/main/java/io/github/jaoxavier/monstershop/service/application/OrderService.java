@@ -62,6 +62,9 @@ public class OrderService {
                             () -> new RuntimeException("Monster not found")
                     );
 
+                    monster.setStock(monster.getStock() - dto.getQuantity());
+                    monsterRepository.save(monster);
+
                     _item.setQuantity(dto.getQuantity());
                     _item.setTotal(dto.getQuantity() * monster.getPrice());
                     _item.setMonster(monster.getId());
