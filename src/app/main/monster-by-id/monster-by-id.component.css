@@ -1,0 +1,33 @@
+.monster-container{
+    display: flex;
+    margin-top: 4rem;
+}
+
+.monster-image{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image{
+    display: block;
+    margin: 0 auto;
+    align-content: center;
+    width: 30%;
+}
+
+.monster-info{
+    width: 30%;
+    padding: 0 1rem;
+}
+
+.monster-info-card{
+    padding-bottom: 12rem;
+    display: flex;
+}
+
+.monster-header{
+    align-content: center;
+    justify-content: center;
+}

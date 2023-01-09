@@ -22,6 +22,10 @@ export class MonsterService {
   }
 
   getMonsterByCategory(category: string){
-    return this.http.get<any>(`${this.api}/${category}`, {headers: this.header})
+    return this.http.get<any>(`${this.api}/category/${category}`, {headers: this.header})
+  }
+
+  getMonsterById(id: number){
+    return this.http.get<any>(`${this.api}/id/${id}`, {headers: this.header})
   }
 }

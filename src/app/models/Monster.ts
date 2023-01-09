@@ -1,6 +1,7 @@
 export class Monster {
     private _id!: number;
     private _name!: string;
+    private _description!: string;
     private _price!: number;
     private _category!: string;
     private _stock!: number;

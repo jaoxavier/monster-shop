@@ -7,13 +7,17 @@ import { LoginComponent } from './account/login/login.component';
 import { HomeComponent } from './main/home/home.component';
 import { LayoutComponent } from './main/layout/layout.component';
 import { MonsterByCategoryComponent } from './main/monster-by-category/monster-by-category.component';
+import { MonsterByIdComponent } from './main/monster-by-id/monster-by-id.component';
+import { MonstersComponent } from './main/monsters/monsters.component';
 
 const routes: Routes = [
   {
   path: '', component: LayoutComponent, children: [
     {path: '', redirectTo: 'home', pathMatch:'full'},
     {path: 'home', component: HomeComponent},
-    {path: 'monster/:category', component: MonsterByCategoryComponent}
+    {path: 'monster/:category', component: MonsterByCategoryComponent},
+    {path: 'monsters/monster-detail/:id', component: MonsterByIdComponent},
+    {path: 'monsters', component: MonstersComponent}
   ], 
   canActivate: [AuthGuard]
   },

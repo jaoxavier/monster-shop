@@ -1,0 +1,7 @@
+<div class="dialog-quantity">
+    <h1>How many you want to buy?</h1>
+    <form #form="ngForm" (ngSubmit)="confirm()">
+        <input type="number" #quantity name="quantity" id="quantity" required [(ngModel)]="item.quantity">
+        <button type="submit" [disabled]="item.quantity == 0">Confirm</button>
+    </form>
+</div>

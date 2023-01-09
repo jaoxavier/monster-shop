@@ -9,6 +9,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatGridListModule } from '@angular/material/grid-list';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,7 +23,10 @@ import { LayoutComponent } from './main/layout/layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './main/layout/header/header.component';
 import { MonsterByCategoryComponent } from './main/monster-by-category/monster-by-category.component';
-import { MonstersAllComponent } from './monsters-all/monsters-all.component';
+import { MonstersComponent } from './main/monsters/monsters.component';
+import { MonsterByIdComponent } from './main/monster-by-id/monster-by-id.component';
+import { QuantityMonsterDialogComponent } from './main/layout/quantity-monster-dialog/quantity-monster-dialog.component';
+import { CartComponent } from './main/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +38,10 @@ import { MonstersAllComponent } from './monsters-all/monsters-all.component';
     LayoutComponent,
     HeaderComponent,
     MonsterByCategoryComponent,
-    MonstersAllComponent
+    MonsterByIdComponent,
+    MonstersComponent,
+    QuantityMonsterDialogComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +55,8 @@ import { MonstersAllComponent } from './monsters-all/monsters-all.component';
     MatMenuModule,
     MatButtonModule,
     MatTooltipModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

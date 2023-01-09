@@ -1,0 +1,17 @@
+<div class="monster-container">
+    <div class="monster-image">
+        <img mat-image class="image" src="{{monster.urlImage}}" alt="A picture of {{monster.name}}">
+    </div>
+    <div class="monster-info">
+        <mat-card class="monster-info-card">
+            <mat-card-header class="monster-header">
+                <mat-card-title class="monster-title">
+                    <h1>{{fullDescription.title}}</h1>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                {{fullDescription.description}}
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

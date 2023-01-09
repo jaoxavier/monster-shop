@@ -1,0 +1,19 @@
+<div class="monster-container" *ngIf="monsters">
+    <mat-card class="monster-card" *ngFor="let monster of monsters">
+        <mat-card-header>
+            <mat-card-title>
+                {{monster.name}}
+            </mat-card-title>
+            <mat-card-subtitle>
+                {{monster.category.replace('_', ' ')}}
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <img mat-card-image src="{{monster.urlImage}}">
+        </mat-card-content>
+        <mat-card-actions>
+            <button [routerLink]="['monster-detail', monster.id]">See more</button>
+            <button (click)="openDialog(monster.id)" >Buy</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
