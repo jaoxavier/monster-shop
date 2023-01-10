@@ -7,7 +7,7 @@
         </mat-card-header>
         <img src="{{monster.urlImage}}" alt="A picture of {{monster.name}}">
         <mat-card-actions>
-            <button>Buy</button>
+            <button (click)="openDialog(monster.id)">Buy</button>
         </mat-card-actions>
     </mat-card>
 </div>

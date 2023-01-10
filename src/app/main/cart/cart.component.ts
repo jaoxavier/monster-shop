@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Monster } from 'src/app/models/Monster';
 import { MonsterService } from 'src/app/services/monster/monster.service';
+import { OrderService } from 'src/app/services/order/order.service';
 
 @Component({
   selector: 'app-cart',
@@ -10,7 +11,8 @@ import { MonsterService } from 'src/app/services/monster/monster.service';
 export class CartComponent implements OnInit{
 
   constructor(
-    private monsterService: MonsterService
+    private monsterService: MonsterService,
+    private orderService: OrderService
   ){}
 
   monsters: Monster[] = [];
@@ -76,5 +78,14 @@ export class CartComponent implements OnInit{
     }, []);
     
     this.order.items = newItems;
+  }
+
+  postOrder(){
+    this.orderService.postOrder(this.order).subscribe(
+      data => {
+        window.sessionStorage.setItem('cart', '')
+        window.location.reload()
+      }
+    )
   }
 }

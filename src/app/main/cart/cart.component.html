@@ -23,8 +23,9 @@
                 <td></td>
                 <td>{{totalQuantity()}}</td>
                 <td></td>
-                <td>{{totalPrice()}}</td>
+                <td>{{totalPrice().toFixed(2)}}</td>
             </tr>
         </table>
+        <button (click)="postOrder()">Finish order</button>
     </mat-card>
 </div>

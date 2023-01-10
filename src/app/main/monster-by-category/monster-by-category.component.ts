@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Monster } from 'src/app/models/Monster';
 import { MonsterService } from 'src/app/services/monster/monster.service';
+import { QuantityMonsterDialogComponent } from '../layout/quantity-monster-dialog/quantity-monster-dialog.component';
 
 @Component({
   selector: 'app-monster-by-category',
@@ -15,7 +17,8 @@ export class MonsterByCategoryComponent implements OnInit {
 
   constructor(
     private router: ActivatedRoute,
-    private monsterService: MonsterService
+    private monsterService: MonsterService,
+    private dialogRef: MatDialog
   ){
     this.router.params.subscribe(
       (params) => {
@@ -29,6 +32,14 @@ export class MonsterByCategoryComponent implements OnInit {
 
   ngOnInit(): void {
     
+  }
+
+  openDialog(idMonster: number){
+    this.dialogRef.open(QuantityMonsterDialogComponent, {
+      data : {
+        id: idMonster
+      }
+    });
   }
 
 }
