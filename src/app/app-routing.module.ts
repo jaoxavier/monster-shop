@@ -4,6 +4,7 @@ import { AuthenticationComponent } from './account/authentication/authentication
 import { CreateAccountComponent } from './account/create-account/create-account.component';
 import { AuthGuard } from './account/guard/auth.guard';
 import { LoginComponent } from './account/login/login.component';
+import { CartComponent } from './main/cart/cart.component';
 import { HomeComponent } from './main/home/home.component';
 import { LayoutComponent } from './main/layout/layout.component';
 import { MonsterByCategoryComponent } from './main/monster-by-category/monster-by-category.component';
@@ -17,7 +18,8 @@ const routes: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'monster/:category', component: MonsterByCategoryComponent},
     {path: 'monsters/monster-detail/:id', component: MonsterByIdComponent},
-    {path: 'monsters', component: MonstersComponent}
+    {path: 'monsters', component: MonstersComponent},
+    {path: 'cart', component: CartComponent}
   ], 
   canActivate: [AuthGuard]
   },

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Inject, Output } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-quantity-monster-dialog',
@@ -17,12 +17,20 @@ export class QuantityMonsterDialogComponent {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
+    private dialog: MatDialog
   ){
-    this.item.monster = data
+    this.item.monster = data.id
   }
 
   confirm(){
-    this.confirmed.emit();
+    if(window.sessionStorage.getItem('cart') != null){
+      let data = window.sessionStorage.getItem('cart');
+      window.sessionStorage.setItem('cart', `${data}, ${JSON.stringify(this.item)}`)
+      this.dialog.closeAll();
+      return;
+    }
+    window.sessionStorage.setItem('cart', `${JSON.stringify(this.item)}`)
+    this.dialog.closeAll();
   }
 
 }

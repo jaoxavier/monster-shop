@@ -1,1 +1,30 @@
-<p>cart works!</p>
+<div class="item-info">
+    <mat-card class="item-card">
+        <table class="table-full">
+            <tr class="table-resource">
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+            <tr *ngFor="let item of order.items" class="table-resource">
+                <td>{{monsterInfo(item.monster)?.name}}</td>
+                <td>{{item.quantity}}</td>
+                <td>{{monsterInfo(item.monster)?.price}}</td>
+                <td>{{total(item.monster)}}</td>
+            </tr>
+            <tr>
+                <th></th>
+                <th>Total products</th>
+                <th></th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>{{totalQuantity()}}</td>
+                <td></td>
+                <td>{{totalPrice()}}</td>
+            </tr>
+        </table>
+    </mat-card>
+</div>

@@ -31,7 +31,7 @@ export class MonstersComponent implements OnInit{
       data : {
         id: idMonster
       }
-    })
+    });
   }
 
 }

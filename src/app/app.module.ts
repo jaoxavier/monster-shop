@@ -9,8 +9,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatGridListModule } from '@angular/material/grid-list';
-import {MatDialogModule} from '@angular/material/dialog';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatListModule } from '@angular/material/list';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -56,7 +56,8 @@ import { CartComponent } from './main/cart/cart.component';
     MatButtonModule,
     MatTooltipModule,
     MatGridListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
