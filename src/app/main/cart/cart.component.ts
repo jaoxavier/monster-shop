@@ -26,19 +26,23 @@ export class CartComponent implements OnInit{
 
   ngOnInit(): void {
     let id = window.localStorage.getItem('id');
-    let cartItems = `[${window.sessionStorage.getItem('cart')}]`;
 
-    this.monsterService.getAllMonsters().subscribe(
-      data => this.monsters = data
-    )
+    if(window.sessionStorage.getItem('cart') != undefined){
+      let cartItems = `[${window.sessionStorage.getItem('cart')}]`;
+      
+      this.monsterService.getAllMonsters().subscribe(
+        data => this.monsters = data
+      )
+  
+      if(id != null){
+        this.order.client = id;
+      }
+      if(cartItems != null){
+        this.order.items = JSON.parse(cartItems);
+        this.verifyItems()
+      }
+    }
 
-    if(id != null){
-      this.order.client = id;
-    }
-    if(cartItems != null){
-      this.order.items = JSON.parse(cartItems);
-      this.verifyItems()
-    }
   }
 
   monsterInfo(idMonster: number): any{
@@ -46,24 +50,32 @@ export class CartComponent implements OnInit{
   }
 
   total(idMonster: number){
-    let data = this.order.items.find(i => i.monster == idMonster);
-    if(data != undefined){
-      return data.quantity * this.monsterInfo(idMonster)?.price;
+    if(window.sessionStorage.getItem('cart') != undefined){
+      let data = this.order.items.find(i => i.monster == idMonster);
+      if(data != undefined){
+        return data.quantity * this.monsterInfo(idMonster)?.price;
+      }
     }
-    return;
+    return 0;
   }
 
   totalQuantity(){
-    return this.order.items.reduce((acc, item) => acc + item.quantity, 0)
+    if(window.sessionStorage.getItem('cart') != undefined){
+      return this.order.items.reduce((acc, item) => acc + item.quantity, 0)
+    }
+    return 0
   }
 
   totalPrice(){
-    let selectedMonsters = this.order.items.map(item => {
-      let monster = this.monsters.find(i => i.id === item.monster);
-      return monster!?.price * item.quantity
-    })
-
-    return selectedMonsters.reduce((acc, item) => acc + item, 0)
+    if(window.sessionStorage.getItem('cart') != undefined){
+      let selectedMonsters = this.order.items.map(item => {
+        let monster = this.monsters.find(i => i.id === item.monster);
+        return monster!?.price * item.quantity
+      })
+  
+      return selectedMonsters.reduce((acc, item) => acc + item, 0)
+    }
+    return 0;
   }
 
   verifyItems(){
@@ -83,7 +95,7 @@ export class CartComponent implements OnInit{
   postOrder(){
     this.orderService.postOrder(this.order).subscribe(
       data => {
-        window.sessionStorage.setItem('cart', '')
+        window.sessionStorage.removeItem('cart')
         window.location.reload()
       }
     )

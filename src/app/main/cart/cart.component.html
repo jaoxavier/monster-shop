@@ -10,7 +10,7 @@
             <tr *ngFor="let item of order.items" class="table-resource">
                 <td>{{monsterInfo(item.monster)?.name}}</td>
                 <td>{{item.quantity}}</td>
-                <td>{{monsterInfo(item.monster)?.price}}</td>
+                <td>{{monsterInfo(item.monster)?.price.toFixed(2)}}</td>
                 <td>{{total(item.monster)}}</td>
             </tr>
             <tr>

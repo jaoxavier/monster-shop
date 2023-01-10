@@ -23,7 +23,7 @@ export class QuantityMonsterDialogComponent {
   }
 
   confirm(){
-    if(window.sessionStorage.getItem('cart') != null){
+    if(window.sessionStorage.getItem('cart') != null || window.sessionStorage.getItem('cart') == ''){
       let data = window.sessionStorage.getItem('cart');
       window.sessionStorage.setItem('cart', `${data}, ${JSON.stringify(this.item)}`)
       this.dialog.closeAll();
