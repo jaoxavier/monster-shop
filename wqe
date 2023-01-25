@@ -1,0 +1,65 @@
+[33mcommit d7199ad0a64a9409b55eca0da15895c8e7fe4321[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Jão Xavier <jvxavier.lima67@gmail.com>
+Date:   Wed Jan 25 14:31:57 2023 -0300
+
+    entity
+
+[33mcommit c746ebb264dfec3001244202e7228df5ad9e1265[m
+Author: Jão Xavier <jvxavier.lima67@gmail.com>
+Date:   Thu Jan 5 06:40:48 2023 -0300
+
+    Controller modified and monster repository
+
+[33mcommit bd1c3bcd6bf21517af1c57a3f8f575685fd8ee87[m
+Author: Jão Xavier <jvxavier.lima67@gmail.com>
+Date:   Mon Jan 2 07:38:48 2023 -0300
+
+    Autentication system with JWT
+
+[33mcommit 8af4dc542a193fc8d9c2b289b4b55d0dd162ee7a[m
+Author: Jão Xavier <jvxavier.lima67@gmail.com>
+Date:   Fri Dec 30 11:36:04 2022 -0300
+
+    orders working, items converter, order info dto for get id, order servive
+
+[33mcommit 292637af1bc5b36bf380d128242540ac112b4ab6[m
+Author: Jão Xavier <jvxavier.lima67@gmail.com>
+Date:   Fri Dec 30 07:34:03 2022 -0300
+
+    All entity, repository and controller created
+
+[33mcommit 6c4c98c9cc3111e5788071004f8e7291a535c4de[m
+Author: Jão Xavier <jvxavier.lima67@gmail.com>
+Date:   Fri Dec 30 07:19:02 2022 -0300
+
+    ORDER ENTITY, REPOSITORY AND CONTROLLER
+
+[33mcommit ce7ad52deef9a9bbe0d0e0804dfd91c40ec9abdf[m
+Author: Jão Xavier <jvxavier.lima67@gmail.com>
+Date:   Fri Dec 30 07:12:05 2022 -0300
+
+    controller created from monster
+
+[33mcommit df670cc19b8c9438a9dde3c3ef6f72ecda8f8459[m
+Author: Jão Xavier <jvxavier.lima67@gmail.com>
+Date:   Fri Dec 30 07:04:18 2022 -0300
+
+    add url image
+
+[33mcommit 84b50ba006ff1afb516d7597387c63af7b4d6574[m
+Author: Jão Xavier <jvxavier.lima67@gmail.com>
+Date:   Thu Dec 29 16:20:58 2022 -0300
+
+    Repository of Monster Created, Save monsters on db
+
+[33mcommit e6bccf1feee0799c567b3cec6951caf32fdcc431[m
+Author: Jão Xavier <jvxavier.lima67@gmail.com>
+Date:   Thu Dec 29 16:00:55 2022 -0300
+
+    add details to entity monster, command line runner and category created
+
+[33mcommit 9b65bccb5c1bc360f05691ad1b8a963f7d21d1bc[m
+Author: Jão Xavier <jvxavier.lima67@gmail.com>
+Date:   Thu Dec 29 15:52:46 2022 -0300
+
+    Project Start and Monster entity
