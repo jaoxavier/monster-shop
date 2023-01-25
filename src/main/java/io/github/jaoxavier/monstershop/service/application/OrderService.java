@@ -39,11 +39,11 @@ public class OrderService {
         List<Items> items = convertItems(dto.getItems(), order);
         order.setItens(items);
 
-        var soma = 0d;
+        var totalPrice = 0d;
         for (Items _item: items) {
-            soma = soma + _item.getTotal();
+            totalPrice = totalPrice + _item.getTotal();
         }
-        order.setTotalPrice(soma);
+        order.setTotalPrice(totalPrice);
 
         itemsRepository.saveAll(items);
         order.setItens(items);

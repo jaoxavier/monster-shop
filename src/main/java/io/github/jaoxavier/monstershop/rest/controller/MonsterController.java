@@ -20,8 +20,15 @@ public class MonsterController {
         return monsterRepository.findAll();
     }
 
-    @GetMapping("/{category}")
+    @GetMapping("/category/{category}")
     public List<Monster> listByCategory(@PathVariable String category){
         return monsterRepository.findByCategory(category);
+    }
+
+    @GetMapping("/id/{id}")
+    public Monster listMonsterById(@PathVariable Integer id){
+        return monsterRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("Monster not found")
+        );
     }
 }

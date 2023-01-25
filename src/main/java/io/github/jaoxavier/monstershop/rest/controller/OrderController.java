@@ -2,6 +2,7 @@ package io.github.jaoxavier.monstershop.rest.controller;
 
 import io.github.jaoxavier.monstershop.domain.dto.OrderDTO;
 import io.github.jaoxavier.monstershop.domain.dto.OrderInfoDTO;
+import io.github.jaoxavier.monstershop.domain.entity.Client;
 import io.github.jaoxavier.monstershop.domain.entity.Order;
 import io.github.jaoxavier.monstershop.domain.repository.ClientRepository;
 import io.github.jaoxavier.monstershop.domain.repository.ItemsRepository;
@@ -48,6 +49,13 @@ public class OrderController {
         orderInfoDTO.setItems(order.getItens());
         orderInfoDTO.setTotal(order.getTotalPrice());
         return orderInfoDTO;
+    }
+    @GetMapping("/client/{id}")
+    public List<Order> listByClientId(@PathVariable Integer id){
+        Client client = clientRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("Client not found")
+        );
+        return orderRepository.findByClient(client);
     }
 
 
